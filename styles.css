@@ -1,0 +1,50 @@
+/* Basic Reset */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Spacing around the navbar */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Sticks to the top of the page */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Horizontal layout */
+    justify-content: flex-end; /* Align to the right */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 12px; /* Padding for clickable area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    border-radius: 4px; /* Rounded corners */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+    color: #fff; /* Keep text color white */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space for stacked items */
+    }
+}
