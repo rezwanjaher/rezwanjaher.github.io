@@ -30,20 +30,29 @@
 <body>
     <!-- The Navigation Bar -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Md Rezwan Jaher</a>
-            <ul class="nav-menu">
-				<li><a href="#about">About</a></li>
-				<li><a href="#featured-research">Research</a></li>
-				<li><a href="#publications">Publications</a></li>
-				<li><a href="#honors">Honors & Awards</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#affiliations">Affiliations</a></li>
-				<li><a href="#contact">Contact</a></li>
+        <!-- ========== Nav-container with this one ========== -->
+		<div class="nav-container">
+			<a href="#home" class="nav-logo">Md Rezwan Jaher</a>
+
+			<!-- The Hamburger Menu Icon -->
+			<div class="nav-toggle" id="mobile-menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+
+			<!-- The Navigation Menu (now with an ID) -->
+			<ul class="nav-menu" id="nav-menu-list">
+				<li><a href="#about" class="nav-link">About</a></li>
+				<li><a href="#featured-research" class="nav-link">Research</a></li>
+				<li><a href="#publications" class="nav-link">Publications</a></li>
+				<li><a href="#honors" class="nav-link">Honors & Awards</a></li>
+				<li><a href="#skills" class="nav-link">Skills</a></li>
+				<li><a href="#affiliations" class="nav-link">Affiliations</a></li>
+				<li><a href="#contact" class="nav-link">Contact</a></li>
 			</ul>
-<!-- ======================================================== -->
-            </ul>
-        </div>
+		</div>
+		<!-- ============================================================= -->
     </nav>
 
     <!-- Hero Section -->
@@ -797,6 +806,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 </script>
+<!-- ... your other scripts ... -->
+
+<!-- ========== SCRIPT FOR THE HAMBURGER MENU ========== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenuList = document.getElementById('nav-menu-list');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Toggle the menu when the hamburger is clicked
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('is-active');
+        navMenuList.classList.toggle('active');
+    });
+
+    // Close the menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenuList.classList.contains('active')) {
+                mobileMenu.classList.remove('is-active');
+                navMenuList.classList.remove('active');
+            }
+        });
+    });
+});
+</script>
+<!-- ==================================================================== -->
+
+</body>
 <!-- ========================================================================= -->
 </body>
 </html>

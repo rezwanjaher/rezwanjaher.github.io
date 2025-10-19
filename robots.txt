@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rezwanjaher.github.io/sitemap.xml
