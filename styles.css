@@ -416,6 +416,13 @@ body {
 .github-badge .badge-value {
     background-color: #f0ad4e; /* Orange */
 }
+/* INFORMS Manuscript Colors */
+.informs-badge .badge-label {
+    background-color: #555; /* A deep, professional green */
+}
+.informs-badge .badge-value {
+    background-color: var(--accent-color); /* A darker shade of the green */
+}
 /* Report Colors - NEW, CONSISTENT PALETTE */
 .report-badge .badge-label {
     background-color: #555; /* Same gray as the GitHub badge */
