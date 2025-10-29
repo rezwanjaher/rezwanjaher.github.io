@@ -368,6 +368,17 @@ body {
     line-height: 1.3;
     color: var(--text-primary);
 }
+/* Status */
+.review-status {
+    font-size: 1.1rem;      /* INCREASED from 0.9rem for more visibility */
+    font-weight: 400;
+    font-style: italic;     
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
 /* --- NEW: Badge Styles for Featured Research --- */
 .badge-container {
     display: flex;
