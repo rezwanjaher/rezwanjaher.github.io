@@ -1508,3 +1508,84 @@ footer {
     margin-top: 0.5rem;
     font-family: var(--font-heading);
 }
+/* --- Custom Column Widths for Skills Section --- */
+/* Apply this ratio on any screen larger than a mobile phone (Tablets & up) */
+@media (min-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1.3fr 0.85fr 1fr;
+    }
+}
+/* --- Gallery Section Styles --- */
+.gallery-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many columns as possible */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-card {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    aspect-ratio: 4/3; /* Forces all boxes to be the same shape (landscape) */
+    cursor: zoom-in;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fill the box perfectly */
+    transition: transform 0.5s ease;
+}
+
+/* The dark overlay that appears on hover */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.85); /* Dark blue background with transparency */
+    backdrop-filter: blur(3px);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%); /* Hidden (pushed down) by default */
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gallery-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.gallery-year {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+/* Hover Animations */
+.gallery-card:hover img {
+    transform: scale(1.1); /* Slight zoom on the photo */
+}
+
+.gallery-card:hover .gallery-overlay {
+    transform: translateY(0); /* Slide the text up */
+}

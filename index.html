@@ -41,16 +41,17 @@
 				<span class="bar"></span>
 			</div>
 
-			<!-- The Navigation Menu (now with an ID) -->
-			<ul class="nav-menu" id="nav-menu-list">
-				<li><a href="#about" class="nav-link">About</a></li>
-				<li><a href="#featured-research" class="nav-link">Research</a></li>
-				<li><a href="#publications" class="nav-link">Publications</a></li>
-				<li><a href="#honors" class="nav-link">Honors & Awards</a></li>
-				<li><a href="#skills" class="nav-link">Skills</a></li>
-				<li><a href="#affiliations" class="nav-link">Affiliations</a></li>
-				<li><a href="#contact" class="nav-link">Contact</a></li>
-			</ul>
+			<!-- The Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu-list">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#featured-research" class="nav-link">Research</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#honors" class="nav-link">Honors</a></li> <!-- Shortened to fit Gallery -->
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#affiliations" class="nav-link">Affiliations</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li> <!-- NEW ITEM -->
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
 		</div>
 		<!-- ============================================================= -->
     </nav>
@@ -181,7 +182,7 @@
 
 </div>
                 <div class="subsection-header">
-                    <h4 class="featured-subsection-title">Key Figures & Algorithm</h4>
+                    <h4 class="featured-subsection-title">Key Figures</h4>
                     <button id="toggle-figures-btn" title="Toggle visibility">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="24" height="24">
                             <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
@@ -228,27 +229,6 @@
                             <p><strong>Figure 6.</strong> Patient-specific hydrodynamic profiles from clinical and longitudinal case studies.</p>
                         </a>
                     </div>
-                    <!-- Algorithm -->
-                    <!-- ========== CORRECTED ALGORITHM SECTION - FINAL VERSION ========== -->
-					<div class="algorithm-box">
-						<h5 class="algorithm-caption"><strong>Algorithm 1:</strong> Patient-Specific Hydrodynamic Profiling Framework</h5>
-						<ol class="algorithm-steps">
-							<li><strong>Input:</strong> Patient Age <em>Age<sub>p</sub></em>, Intraocular Pressure <em>IOP<sub>p</sub></em></li>
-							<li><strong>Output:</strong> Synthesized profile with posterior distributions for {<em>K<sub>TM</sub>, G, C<sub>trab</sub>, D<sub>p</sub></em>} and constrained prior distributions for {<em>Q<sub>AH</sub>, F<sub>u</sub>, EVP</em>}</li>
-							<li>Generate <em>N</em> = 1000 plausible hydrodynamic state vectors {<strong>X</strong><sub><em>i</em></sub>}<span class="stack"><sup><em>N</em></sup><sub><em>i</em>=1</sub></span> by sampling physiological priors {<em>Q<sub>AH</sub>, F<sub>u</sub>, EVP</em>}<sub><em>i</em></sub> from age-stratified distributions <em>P(Age<sub>p</sub>)</em>.</li>
-							<li>For each state <em>i</em>, set <strong>X</strong><sub><em>i</em></sub> = {<em>IOP<sub>p</sub>, Q<sub>AH,i</sub>, F<sub>u,i</sub>, EVP<sub>i</sub>, Age<sub>p</sub></em>}.</li>
-							<li><strong>for</strong> <em>i</em> = 1 → <em>N</em> <strong>do</strong></li>
-							<li class="indented-step">Infer permeability <em>K<sub>TM,i</sub></em> ← AISolver(<strong>X</strong><sub><em>i</em></sub>).</li>
-							<li class="indented-step">Construct feature vector <strong>Z</strong><sub><em>i</em></sub> = {<em>K<sub>TM,i</sub></em>, <strong>X</strong><sub><em>i</em></sub>}.</li>
-							<li class="indented-step">Infer geometry factor <em>G<sub>i</sub></em> ← PatientSpecificCalibrationBridge(<strong>Z</strong><sub><em>i</em></sub>).</li>
-							<li><strong>end for</strong></li>
-							<li>Synthesize full posterior distributions for <em>K<sub>TM</sub></em> from {<em>K<sub>TM,i</sub></em>}<span class="stack"><sup><em>N</em></sup><sub><em>i</em>=1</sub></span> and <em>G</em> from {<em>G<sub>i</sub></em>}<span class="stack"><sup><em>N</em></sup><sub><em>i</em>=1</sub></span>.</li>
-							<li>Derive posterior for <em>C<sub>trab</sub></em> by applying the composite relationship to the full distributions of <em>K<sub>TM</sub></em> and <em>G</em>.</li>
-							<li>Derive posterior for <em>D<sub>p</sub></em> from the <em>K<sub>TM</sub></em> distribution using the Kozeny-Carman relation and age-dependent porosity ε(Age<sub><em>p</em></sub>).</li>
-							<li><strong>return</strong> All posterior and constrained prior distributions.</li>
-						</ol>
-					</div>
-<!-- ========== END OF ALGORITHM SECTION ========== -->
                 </div>
 
                 <div class="project-links">
@@ -260,7 +240,9 @@
 <section id="ongoing-research" class="content-section">
     <h2 class="section-title">Ongoing Research</h2>
 
-    <div class="featured-research-card">
+    <!-- PROJECT 1: Invasive Species (DRL) -->
+    <!-- UPDATED ID: More descriptive for direct linking -->
+    <div id="deep-reinforcement-learning-invasive-species-management" class="featured-research-card" style="margin-bottom: 3rem;">
         
         <!-- Header with Title and Badges -->
         <div class="featured-header">
@@ -268,15 +250,13 @@
                 <h3 class="featured-title">Learning Scalable Policies for Invasive Species Management: A Deep Reinforcement Learning Framework for Spatio-Temporal POMDPs</h3>
             </div>
             <div class="badge-container">
-                <!-- Technical Report Badge with your Google Drive Link -->
+                <!-- Technical Report Badge -->
                 <a href="https://drive.google.com/file/d/1zL9-axibTGz2_IYv-31NzrUfcsuD0_7a/view?usp=sharing" target="_blank" class="action-badge report-badge">
-                    <span class="badge-label">
-                        Technical Report
-                    </span>
+                    <span class="badge-label">Technical Report</span>
                     <span class="badge-value">[PDF]</span>
                 </a>
 
-                <!-- GitHub Code Badge - REMEMBER to update the repo name -->
+                <!-- GitHub Code Badge -->
                 <a href="https://github.com/rezwanjaher/smip-gnn" target="_blank" class="action-badge github-badge">
                     <span class="badge-label">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="15" height="15"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -290,21 +270,21 @@
         <!-- Author and Date -->
         <p class="featured-authors">
             <strong>Md Rezwan Jaher</strong><br>
-            Jul. 2025 - Present
+            Jun. 2025 - Present
         </p>
 
-        <!-- Your updated bullet-point descriptions -->
+        <!-- Descriptions -->
         <ul class="featured-contributions">
             <li>Developed a novel “glass-box” Stochastic Program Emulation Environment (SPEE), a high-fidelity simulator grounded in the first-principles dynamics of state-of-the-art M-SMIP model.</li>
-            <li>Architected a Graph Neural Network (GNN)-based policy and trained it via Deep Reinforcement Learning (DRL) to learn a scalable & adaptive control policy that overcomes the "curse of dimensionality" inherent in traditional optimization.
-			<li>Validated the learned policy against the provably optimal M-SMIP solution on a solvable benchmark and demonstrated its power on a computationally intractable instance by converting a projected $2.05M loss (worst baseline heuristic) into a $1.81M net benefit.</li>
-            <li>Extensions and further improvements work in progress (e.g., generalizing to other species, GCRNs for better temporal memory, GIS data instead of simplified grid structure). A comprehensive technical report detailing the complete methodology, validation, and results of current progress is available online.
-			</ul>
+            <li>Architected a Graph Neural Network (GNN)-based policy and trained it via Deep Reinforcement Learning (DRL) to learn a scalable & adaptive control policy that overcomes the "curse of dimensionality" inherent in traditional optimization.</li>
+            <li>Validated the learned policy against the provably optimal M-SMIP solution on a solvable benchmark and demonstrated its power on a computationally intractable instance by converting a projected $2.05M loss (worst baseline heuristic) into a $1.81M net benefit.</li>
+            <li>Extensions and further improvements work in progress (e.g., generalizing to other species, GCRNs for better temporal memory, GIS data instead of simplified grid structure). A comprehensive technical report detailing the complete methodology, validation, and results of current progress is available online.</li>
+        </ul>
         
+        <!-- Figures -->
         <h4 class="featured-subsection-title">Key Figures</h4>
         <div class="figure-grid">
             <div class="figure-subgrid">
-                <!-- Figure 1 with your new paths and caption -->
                 <a href="assets/ongoing_research/project_2_figure-1.svg" class="figure-item lightbox-trigger">
                     <div class="preview-image-stack">
                         <img src="assets/ongoing_research/ongoing-fig-1-preview-1.png" alt="Ongoing project preview 1a">
@@ -313,22 +293,62 @@
                     </div>
                     <p><strong>Figure 1,4,5.</strong> Benchmark Scenarios and Policy comparison on the 5-year, 5 × 5 (25-site) Validation Benchmark</p>
                 </a>
-                <!-- Figure 2 with your new paths and caption -->
                 <a href="assets/ongoing_research/8_8_grid_10_yrs_full.svg" class="figure-item lightbox-trigger">
                     <div class="preview-image-stack">
                        <img src="assets/ongoing_research/ongoing-fig-2-preview-1.png" alt="Ongoing project preview 2a">
                         <img src="assets/ongoing_research/ongoing-fig-2-preview-2.png" alt="Ongoing project preview 2b">
                         <img src="assets/ongoing_research/ongoing-fig-2-preview-3.png" alt="Ongoing project preview 2c">
                     </div>
-                    <p><strong>Figure 7.</strong> Overall Average Performance on the 10-Year, 8 × 8 (64-Site) Scalability Benchmark. The top row (a-f) shows the dynamic behavior of the learned DRL policy in a representative run of the High infestation scenario. The bottom row (g-i) summarizes the average performance of all policies across all scenarios (averaged over 1000 stochastic simulations).</p>
+                    <p><strong>Figure 7.</strong> Overall Average Performance on the 10-Year, 8 × 8 (64-Site) Scalability Benchmark.</p>
                 </a>
             </div>
         </div>
-
     </div>
+
+    <!-- PROJECT 2: PCDS (Data Centric Approach) -->
+    <div id="pcds-data-centric-multi-fidelity-modeling" class="featured-research-card">
+        
+        <!-- Header -->
+        <div class="featured-header">
+            <div>
+                <h3 class="featured-title">Physics-Calibrated Data Scaling: A Data Centric Approach to Multi-fidelity Modeling</h3>
+            </div>
+            <div class="badge-container">
+                <!-- Technical Report Badge (Placeholder Link: Replace '#' with actual link) -->
+                <a href="https://drive.google.com/file/d/1ngZVTAdyK3OozecE75qoC2v0eKw5DWH3/view?usp=sharing" target="_blank" class="action-badge report-badge">
+                    <span class="badge-label">Technical Report</span>
+                    <span class="badge-value">[PDF]</span>
+                </a>
+                <!-- GitHub Badge (Placeholder Link: ) -->
+				  <!-- 
+                <a href="#" target="_blank" class="action-badge github-badge">
+                    <span class="badge-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="15" height="15"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        GitHub
+                    </span>
+                    <span class="badge-value">Code</span>
+                </a>
+				-->
+            </div>
+        </div>
+
+        <!-- Author and Date -->
+        <p class="featured-authors">
+            <strong>Md Rezwan Jaher</strong><br>
+            Sept. 2025 - Present
+        </p>
+
+        <!-- Updated Bullet Points -->
+        <ul class="featured-contributions">
+            <li>Formalized Physics-Calibrated Data Scaling (PCDS) as a novel data-centric multi-fidelity framework. Unlike traditional delta-learning which couples calibration and prediction to correct a single model, PCDS strictly decouples these stages to mass-produce high-fidelity synthetic data. This approach bypasses the cubic computational bottlenecks of standard Bayesian methods, enabling the generation of massive training sets for data-hungry downstream applications.</li>
+            <li>Derived finite-sample error bounds in Reproducing Kernel Hilbert Spaces (RKHS) to theoretically establish the precise condition for data efficiency. This analysis proved that PCDS achieves a superior learning convergence rate whenever the discrepancy function exhibits higher spectral regularity(smoothness) than the complex ground-truth physics.</li>
+            <li>Validated the framework on a non-stationary G/G/c queuing simulation characterized by stiff dynamics. A bootstrap analysis of the learning curves demonstrated a significantly faster convergence rate (<i>&alpha;</i> &approx; 1.30) compared to the brute-force baseline (<i>&alpha;</i> &approx; 1.08) with high statistical significance (<i>p</i> &lt; 0.001).</li>
+            <li>Undertook this project as a focused, self-directed learning experience into Statistical Learning Theory. With this project I am working on my ability to construct formal proofs and derive statistical guarantees, establishing the theoretical groundwork for my future research.</li>
+        </ul>
+    </div>
+
 </section>
 <!-- ========== END of the Ongoing Research Section ========== -->
-<!-- ========== Publications ========== -->
 <section id="publications" class="content-section">
     <h2 class="section-title">Publications</h2>
     
@@ -452,27 +472,45 @@
         <section id="skills" class="content-section">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-container">
+                
+                <!-- Column 1: Academic Core -->
                 <div class="skill-category">
                     <h3>Core Competencies</h3>
                     <ul class="skills-list">
-                        <li><strong>Operations Research:</strong>  Stochastic Optimization, Simulation, Mathematical Programming, Decision-Making under Uncertainty</li>
+                        <li><strong>Operations Research:</strong> Stochastic Optimization, Simulation, Mathematical Programming, Decision-Making under Uncertainty</li>
+                        <!-- Added for Kellogg -->
+                        <li><strong>Operations Management:</strong> Queueing Theory, Inventory Control, Dynamic Resource Allocation, Supply Chain Analytics</li>
                         <li><strong>Machine Learning:</strong> Deep Reinforcement Learning, Supervised Learning, Probabilistic Modeling, Physics-Informed AI</li>
-                        <li><strong>Computational Science:</strong> Inverse Problems, Spatio-Temporal Modeling, Finite Element Method (FEM), Heat Transfer, Fluid Dynamics</li>
+                        <li><strong>Computational Science:</strong> Inverse Problems, Spatio-Temporal Modeling, Finite Element Method (FEM), Heat Transfer</li>
                     </ul>
                 </div>
+
+                <!-- Column 2: Tools -->
                 <div class="skill-category">
                     <h3>Tools & Technologies</h3>
                     <ul class="skills-list">
-                        <li><strong>Programming:</strong> Python (PyTorch, Stable-Baselines3, Scikit-learn, XGBoost, NumPy, Pandas, SciPy), MATLAB, R, C/C++</li>
-                        <li><strong>Simulation & Modeling:</strong> COMSOL Multiphysics, SimPy, Gymnasium, ARENA</li>
+                        <li><strong>Programming:</strong> Python (PyTorch, Stable-Baselines3, Scikit-learn, XGBoost, NumPy, Pandas), MATLAB, R, C/C++</li>
+                        <li><strong>Simulation:</strong> COMSOL Multiphysics, SimPy, Gymnasium, ARENA</li>
                         <li><strong>Optimization:</strong> Gurobi, CPLEX</li>
-                        <li><strong>Data & Databases:</strong> SQL, Data Visualization (Matplotlib, Seaborn)</li>
+                        <li><strong>Data & Databases:</strong> SQL, Matplotlib, Seaborn</li>
                     </ul>
                 </div>
+
+                <!-- Column 3: Industry Skills -->
+                <div class="skill-category">
+                    <h3>Industry Skills (5+ YoE)</h3>
+                    <ul class="skills-list">
+                        <li><strong>Data-Driven Planning:</strong> Demand Forecasting (LSTM), Inventory Policy Optimization, Stock Control</li>
+                        <li><strong>Process Improvement:</strong> Lean Manufacturing (Kaizen), Bottleneck Analysis, Lead Time Stabilization</li>
+                        <li><strong>Industrial Engineering:</strong> Facility Layout Design, Work Measurement (PMTS), Capacity Planning</li>
+                    </ul>
+                </div>
+
             </div>
             <h3 class="subsection-title">Non-degree Coursework</h3>
             <div class="cert-grid">
-                 <div class="cert-card multi-course-card">
+                <!-- 1. Mathematics for Machine Learning (Imperial College) -->
+                <div class="cert-card multi-course-card">
                     <h4>Mathematics for Machine Learning Specialization</h4>
                     <p class="cert-issuer">From <strong>Imperial College London</strong> via Coursera</p>
                     <p class="completed-courses-label">Completed Courses:</p>
@@ -483,6 +521,8 @@
                     </ul>
                     <a href="https://coursera.org/verify/specialization/KBQ5SRY9BV3C" target="_blank" class="cert-link">Certificate</a>
                 </div>
+
+                <!-- 2. Operations Research (NTU) -->
                 <div class="cert-card multi-course-card">
                     <h4>Operations Research Specialization</h4>
                     <p class="cert-issuer">From <strong>National Taiwan University</strong> via Coursera</p>
@@ -498,6 +538,27 @@
                         <a href="https://coursera.org/verify/YE2IU1BGL534" target="_blank">Certificate 3</a>
                     </div>
                 </div>
+
+                <!-- 3. NEW: Linear Algebra (Johns Hopkins) -->
+                <!-- This sits on Row 2, Left Side -->
+                <div class="cert-card multi-course-card">
+                    <h4>Linear Algebra from Elementary to Advanced</h4>
+                    <p class="cert-issuer">From <strong>Johns Hopkins University</strong> via Coursera</p>
+                    <p class="completed-courses-label">Completed Courses:</p>
+                    <ul>
+                        <li>Linear Algebra: Linear Systems and Matrix Equations</li>
+                        <li>Linear Algebra: Matrix Algebra, Determinants, & Eigenvectors</li>
+                        <li>Linear Algebra: Orthogonality and Diagonalization</li>
+                    </ul>
+                    <div class="cert-links-footer">
+                        <a href="https://coursera.org/verify/XTP0KSEAPCOS" target="_blank">Certificate 1</a>
+                        <a href="https://coursera.org/verify/4P5EUV4TLD71" target="_blank">Certificate 2</a>
+                        <a href="https://coursera.org/verify/FMFB1FU2HQ07" target="_blank">Certificate 3</a>
+                    </div>
+                </div>
+
+                <!-- 4. Executive Education (ASU) -->
+                <!-- This now moves to Row 2, Right Side -->
                 <div class="cert-card multi-course-card">
                     <h4>Executive Education in Data Science & AI</h4>
                     <p class="cert-issuer">From <strong>Arizona State University</strong>, Thunderbird School of Global Management</p>
@@ -534,7 +595,71 @@
                 </div>
             </div>
         </section>
+<!-- ========== PROFESSIONAL GALLERY SECTION ========== -->
+        <section id="gallery" class="content-section">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle" style="margin-top: -1rem; margin-bottom: 2rem;">
+                Snapshots from life at Shahjalal University of Science & Technology.
+            </p>
+            
+            <div class="gallery-grid">
+                
+                <!-- 1. Award (Service) -->
+                <a href="assets/undergrad_gallery/IPE_association_award.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/IPE_association_award.png" alt="Receiving Award">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Honorary Award for Dedicated Service</span>
+                        <span class="gallery-year">Presented by IPE Association Leadership (2017)</span>
+                    </div>
+                </a>
 
+                <!-- 2. Committee (Leadership) - UPDATED TEXT -->
+                <a href="assets/undergrad_gallery/ICERIE_organizing_committee.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/ICERIE_organizing_committee.png" alt="Organizing Committee">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text" style="font-size: 0.8rem;">Conference Organizing Committee, Faculty and Student Members</span>
+                        <span class="gallery-year" style="font-size: 0.75rem;">4th Int. Conf. on Engineering Research, Innovation and Education (ICERIE)</span>
+                    </div>
+                </a>
+
+                <!-- 3. Professor (Global Network) -->
+                <a href="assets/undergrad_gallery/ICERIE.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/ICERIE.png" alt="Networking with Faculty">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Networking with International Faculty</span>
+                        <span class="gallery-year">ICERIE Conference (2017)</span>
+                    </div>
+                </a>
+
+                <!-- 4. Training (Industry Skills) -->
+                <a href="assets/undergrad_gallery/training.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/training.png" alt="Industrial Training">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Training Institute for Chemical Industries</span>
+                        <span class="gallery-year">Industrial Training Fieldwork</span>
+                    </div>
+                </a>
+
+                <!-- 5. Thesis Dinner (Relationships) -->
+                <a href="assets/undergrad_gallery/thesis_defense_dinner.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/thesis_defense_dinner.png" alt="Thesis Defense Dinner">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Post-Thesis Defense Celebration</span>
+                        <span class="gallery-year">With Advisor Prof. Dr. Abul Mukid Mohammad Mukaddes</span>
+                    </div>
+                </a>
+
+                <!-- 6. Campus (Roots) -->
+                <a href="assets/undergrad_gallery/SUST.png" class="gallery-card lightbox-trigger">
+                    <img src="assets/undergrad_gallery/SUST.png" alt="SUST Campus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Alma Mater</span>
+                        <span class="gallery-year">Shahjalal University of Science & Technology</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
         <!-- Contact Section -->
         <section id="contact" class="content-section">
             <h2 class="section-title">Get In Touch</h2>
