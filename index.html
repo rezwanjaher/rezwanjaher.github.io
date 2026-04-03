@@ -149,17 +149,16 @@
                 <h4 class="featured-subsection-title">Abstract</h4>
                 <div class="abstract-container" id="abstract-container">
                     <p class="featured-abstract">
-                    Many critical healthcare decisions are challenged by the inability to measure key underlying parameters. Glaucoma, a leading cause of irreversible blindness driven by elevated intraocular pressure (IOP), provides a stark example. The primary determinant of IOP, a tissue property called trabecular meshwork permeability, cannot be measured <i>in vivo</i>, forcing clinicians to depend on indirect surrogates. This clinical challenge is compounded by a broader computational one: developing predictive models for such ill-posed inverse problems is hindered by a lack of ground-truth data and prohibitive cost of large-scale, high-fidelity simulations.
-            We address both challenges with an end-to-end framework to noninvasively estimate unmeasurable variables from sparse, routine data. Our approach combines a multi-stage surrogate to functionally separate the problem; a novel data generation strategy we term PCDS that obviates the need for hundreds of thousands of costly simulations, reducing the effective computational time from years to hours; and a Bayesian engine to quantify predictive uncertainty. Our framework deconstructs a single IOP measurement into its fundamental components, yielding estimates for the unmeasurable tissue permeability and a patient's outflow facility. Validation against diverse clinical data confirmed the framework's high fidelity. Our noninvasive estimates of outflow facility achieved excellent agreement with state-of-the-art tonography, showing near-zero bias and precision comparable to direct physical instruments. Furthermore, the newly derived permeability biomarker demonstrates high accuracy in stratifying clinical cohorts by disease risk, highlighting its diagnostic potential.
-            This work delivers a computational tool for clinical decision support by providing a complete, probabilistic profile of a patient's condition. This profile visualizes the entire distribution of plausible hydrodynamic states consistent with routine inputs (age and IOP), offering a holistic view unattainable with current methods and democratizing access to advanced diagnostics. More broadly, our framework establishes a generalizable blueprint for solving similar inverse problems in other data-scarce, computationally-intensive domains.
-                    </p>
+                    Many critical decision-making processes in healthcare and engineering are challenged by the inability to measure key underlying parameters. These scenarios often formulate as mechanistically hierarchical inverse problems, where the observable macroscopic output is multiplicatively entangled with intrinsic micro-scale physics and unmeasurable spatial geometry. Solving such severely underdetermined problems via standard Bayesian inference or simulation-based calibration requires millions of forward evaluations, rendering patient-specific inference computationally intractable at the clinical point-of-care. Conversely, standard black-box empirical models fail to resolve the structural non-identifiability, indiscriminately absorbing structural variance and collapsing to the population mean.
+To address these coupled clinical and computational challenges, we propose a novel two-stage architectural decomposition. Instead of a monolithic mapping, we functionally separate the inverse problem according to its governing physics. The first stage acts as a constrained inverse surrogate, isolating the intrinsic biophysical parameter by learning the inverse mapping over an idealized reference manifold. The second stage performs empirical structural calibration, learning an effective geometric factor to bridge the idealized physics with in vivo macroscopic reality. To train this architecture under extreme data scarcity, we introduce Physics-Calibrated Data Scaling (PCDS), a highly scalable data generation strategy that dynamically corrects the systematic bias between low-fidelity analytical surrogates and high-fidelity finite element simulations.
+We demonstrate this framework on the clinical diagnosis of glaucoma, successfully deconstructing a single, routine intraocular pressure (IOP) measurement into its latent hydrodynamic root causes (tissue permeability and outflow facility). By propagating population-level epistemic uncertainty through our trained operators via Monte Carlo sampling, the framework generates a continuous, empirical push-forward distribution of the patient’s physiological state. Our results confirm that while standard data-driven baselines achieve only 37% classification accuracy, our hierarchical decomposition achieves 92.5% diagnostic accuracy, offering a generalizable blueprint for solving ill-posed, data-scarce inverse problems across the physical and biological sciences 
+				   </p>
                 </div>
                 <button id="toggle-abstract-btn" class="toggle-abstract-btn">Read More</button>
 				
                 <div class="featured-research-details">
 
-    <p>This project introduces an end-to-end computational framework from ground-truth dataset generation to patient-specific inference for the purpose of solving a long-standing, ill-posed, and underdetermined inverse problem in ocular hydrodynamics using only routine clinical input.</p>
-
+    
    <h4>Methodological Contributions</h4>
     <ul class="featured-contributions">
         <li>Developed a novel, physics guided decomposition architecture to make the underdetermined problem tractable by separating biophysical and patient-specific components.</li>
@@ -446,7 +445,7 @@
                 <!-- 4. Executive Education (ASU) -->
                 <!-- This now moves to Row 2, Right Side -->
                 <div class="cert-card multi-course-card">
-                    <h4>Executive Education in Data Science & AI</h4>
+                    <h4>Executive Education</h4>
                     <p class="cert-issuer">From <strong>Arizona State University</strong>, Thunderbird School of Global Management</p>
                     <p class="completed-courses-label">Completed Courses:</p>
                     <ul>
