@@ -1589,3 +1589,7 @@ footer {
 .gallery-card:hover .gallery-overlay {
     transform: translateY(0); /* Slide the text up */
 }
+/* ===== Nov 2026 update ===== */
+.featured-research-card + .featured-research-card { margin-top: 2rem; }
+.section-content p + p { margin-top: 1rem; }
+.section-subtitle.second-group { margin-top: 2.5rem; }
