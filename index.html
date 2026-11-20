@@ -553,6 +553,7 @@ We demonstrate this framework on the clinical diagnosis of glaucoma, successfull
     </div>
 
     <footer>
+        <div id="visitor-map" class="visitor-map" aria-live="polite"></div>
         <p>&copy; 2026 Md Rezwan Jaher. All Rights Reserved.</p>
 		<p id="last-updated-widget">Last Updated: <span id="last-updated-date">Loading...</span></p>
     </footer>
@@ -564,6 +565,8 @@ We demonstrate this framework on the clinical diagnosis of glaucoma, successfull
 	</a>
     <!-- Your custom animation script -->
     <script src="network-animation.js"></script>
+    <!-- Visitor map (counts by country, via a Cloudflare Worker) -->
+    <script src="assets/visitors/visitors.js" defer></script>
 
     <!-- basicLightbox JS for the modal popup -->
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>

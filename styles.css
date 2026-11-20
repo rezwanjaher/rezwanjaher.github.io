@@ -1593,3 +1593,16 @@ footer {
 .featured-research-card + .featured-research-card { margin-top: 2rem; }
 .section-content p + p { margin-top: 1rem; }
 .section-subtitle.second-group { margin-top: 2.5rem; }
+
+/* ===== Visitor map (Nov 2026) ===== */
+.visitor-map { max-width: 520px; margin: 0 auto 1.5rem; }
+.vm-svg { width: 100%; height: auto; display: block; }
+.vm-sphere { fill: #16213a; stroke: #1f2a44; stroke-width: 1; }
+.vm-land { fill: #334155; stroke: #3f4d63; stroke-width: 0.5; }
+.vm-dot { fill: var(--accent-color); fill-opacity: 0.75; stroke: #e0f2fe; stroke-width: 0.8; }
+.vm-dot:hover { fill-opacity: 1; }
+.vm-summary { margin: 0.6rem 0 0.4rem; font-family: var(--font-heading); color: #cbd5e1; font-size: 0.85rem; }
+.vm-flags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 0.9rem; }
+.vm-flags li { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-heading); font-size: 0.8rem; color: #cbd5e1; }
+.vm-flags img { border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.15); }
+.vm-code { font-weight: 700; color: #e2e8f0; min-width: 24px; text-align: center; }
